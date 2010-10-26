@@ -1,0 +1,51 @@
+<!DOCTYPE html> 
+<html lang="en" manifest="checklist.manifest"> 
+<head> 
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Checklist</title>
+<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0;" />
+<meta name="apple-mobile-web-app-capable" content="yes" />
+<meta name="apple-mobile-web-app-status-bar-style" />
+<link rel="apple-touch-startup-image" href="splashscreen.png" />
+<link rel="stylesheet" href="styles.css" /> 
+<link rel="apple-touch-icon" href="iOS-114.png" /> 
+<script src="main.js"></script>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-6471139-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+var ga = document.createElement('script');
+ga.src = ('https:' == document.location.protocol ?
+    'https://ssl' : 'http://www') +
+    '.google-analytics.com/ga.js';
+ga.setAttribute('async', 'true');
+document.documentElement.firstChild.appendChild(ga);
+})();
+</script>
+</head> 
+<body> 
+<article role="main"> 
+    <header role="banner">
+      <button type="button" id="sendmail">Mail</button>
+      <h1>Checklist</h1>  
+    </header>  
+	<form id="inputarea" onsubmit="checklistApp.addNewItem()">
+		<input type="text" name="name" id="name" maxlength="75" autocorrect placeholder="Enter a new item&hellip;" />
+		<button type="button" id="add">Add</button>
+	</form>
+	<ul id="maillist">
+		<li class="empty"><a href="" id="maillink">Mail remaining items</a></li>
+	</ul>
+	<p id="totals"><span id="tally1">Total: <span id="total">0</span></span><span id="tally2">Remaining: <span id="remaining">0</span></span></p>    
+	<ul id="checklist" role="list">
+		<li class="empty" role="listitem">Loading&hellip;</li>
+	</ul>
+    <fieldset>
+    	<button type="button" id="deletechecked">Delete Checked</button>
+    	<button type="button" id="deleteall">Delete All</button>
+    </fieldset>
+</article>
+</body> 
+</html> 
